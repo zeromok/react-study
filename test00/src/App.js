@@ -28,9 +28,10 @@ function Nav(props) {
   for(let i=0; i<props.topics.length; i++) {
     let t = props.topics[i];
     // 동적으로 만들어주는 태그에는 고유한 속성인 key(props) 를 가지고 있어야 한다.(반복문 안에서 고유해야 한다.)
-    lis.push(<li key={t.id}><a id={t.id} href={'/read/' + t.id} onClick={ (event) => {
-      event.preventDefault();
-      props.onChangeMode(Number(event.target.id));
+    lis.push(<li key={t.id}>
+      <a id={t.id} href={'/read/' + t.id} onClick={ (event) => {
+        event.preventDefault();
+        props.onChangeMode(Number(event.target.id));
     }}>
         {t.title}
       </a></li>);
@@ -67,6 +68,7 @@ function Create(props) {
         event.preventDefault();
         const title = event.target.title.value;
         const body = event.target.body.value;
+        props.onCreate(title, body);
       }}>
         <p>
           <input name='title' type='text' placeholder='title'></input>
@@ -114,7 +116,7 @@ function Update(props) {
 }
 
 function App() {
-  
+  // 현재 선택된 id값이 없다. -> useState(null);
   const [id, setId] = useState(null);
   const [topics, setTopics] = useState([
     {id:1, title:'Html', body:'Html is ...'},
@@ -122,12 +124,16 @@ function App() {
     {id:3, title:'JavaScript', body:'JavaScript is ...'}
   ]);
   const [mode, setMode] = useState('WELCOME');
+  const [nextId, setNextId] = useState(4);
   let content = null;
   let contextControl = null;
 
   if(mode === 'WELCOME') {
+
     content = <Aticle title='Welcome' body='Hello, WEB'></Aticle>
+
   } else if(mode === 'READ') {
+
     let title = null;
     let body = null;
     for(let i=0; i<topics.length; i++) {
@@ -158,10 +164,13 @@ function App() {
     </>
   } else if(mode === 'CREATE') {
     content = <Create onCreate = { (_title, _body) => {
+
+      // setState(Object)일 때,
       const newTopic = {id:nextId, title:_title, body:_body}
       const newTopics = [...topics];
       newTopics.push(newTopic);
       setTopics(newTopics);
+
       setMode('READ');
       setId(nextId);
       setNextId(nextId + 1);
