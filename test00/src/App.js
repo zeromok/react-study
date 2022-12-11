@@ -3,6 +3,7 @@ import {useState} from 'react';
 
 // ===========================
 // 컴포넌트 = 사용자 정의 태그
+// props : Object, 태그의 속성을 가지고 있다.
 // ===========================
 
 // Header 컴포넌트
@@ -26,6 +27,7 @@ function Nav(props) {
   const lis = [];
   for(let i=0; i<props.topics.length; i++) {
     let t = props.topics[i];
+    // 동적으로 만들어주는 태그에는 고유한 속성인 key(props) 를 가지고 있어야 한다.(반복문 안에서 고유해야 한다.)
     lis.push(<li key={t.id}><a id={t.id} href={'/read/' + t.id} onClick={ (event) => {
       event.preventDefault();
       props.onChangeMode(Number(event.target.id));
