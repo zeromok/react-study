@@ -1,6 +1,10 @@
 import './App.css';
 import {useState} from 'react';
 
+// ===========================
+// 컴포넌트 = 사용자 정의 태그
+// ===========================
+
 // Header 컴포넌트
 function Header(props) {
   return (
@@ -41,12 +45,14 @@ function Nav(props) {
 // Aticle 컴포넌트
 function Aticle(props) {
   return (
-    <aticle>
-      <h2>
-        {props.title}
-      </h2>
-      {props.body}
-    </aticle>
+    <div className='article'>
+      <aticle>
+        <h2>
+          {props.title}
+        </h2>
+        {props.body}
+      </aticle>
+    </div>
   );
 }
 
@@ -106,6 +112,7 @@ function Update(props) {
 }
 
 function App() {
+  
   const [id, setId] = useState(null);
   const [topics, setTopics] = useState([
     {id:1, title:'Html', body:'Html is ...'},
@@ -182,6 +189,29 @@ function App() {
   }
 
   return (
+  /*
+
+    <div>
+      <header>
+        <h1><a href="/">WEB</a></h1>
+      </header>
+
+      <nav>
+        <ol>
+          <li><a href="/read/1"></a>Html</li>
+          <li><a href="/read/2"></a>Css</li>
+          <li><a href="/read/3"></a>JavaScript</li>
+        </ol>
+      </nav>
+
+      <article>
+        <h2>Welcome</h2>
+        Hello, WEB
+      </article>
+    </div>
+
+  */
+
     <div>
       <Header title='WEB' onChangeMode={ () => {
         setMode('WELCOME');
