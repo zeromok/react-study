@@ -7,9 +7,11 @@ import { useState } from 'react';
 
 // App.js 는 메인페이지에 들어갈 HTML 짜는 곳
 function App() {
+  let topics = ['남자 코트 추천', '강남 우동 맛집', '파이썬 독학'];
   let attr = { color : 'white', fontSize : '16px' }
   let post = '강남 우동 맛집';
-  let [글제목, _글제목] = useState(['남자 코트 추천', '강남 우동 맛집', '파이썬 독학']);
+
+  let [글제목, _글제목] = useState(topics);
   // let [logo, setLogo] = useState('ReactBlog');
   // State 가 필요할 때만. -> 자주 변경이 될거같은... 
   let [좋아요, _좋아요] = useState(0);
@@ -52,7 +54,7 @@ function App() {
         <h4>{ 글제목[2] }</h4>
         <p>10월 26일 발행</p>
       </div>
-      
+
       {/* {변수명 or 함수(리턴값) or logo(임포트 해 온 이미지)} : 데이터 바인딩 */}
       <h4>{ post }</h4>
 
