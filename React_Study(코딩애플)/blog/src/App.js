@@ -30,9 +30,6 @@ function App() {
         가나다순 정렬
       </button>
 
-      {/* <button onClick={ () =>{ _글제목( ['여자 코트 추천', '강남 우동 맛집', '파이썬 독학'] ); } } >1번째 글수정</button> */}
-      {/* 위 코드는 비효율적 */}
-
       <button onClick={ () =>{
         let copy = [...글제목];
         copy[0] = '여자 코트 추천';
