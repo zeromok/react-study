@@ -1,4 +1,6 @@
 import './App.css';
+/* state 사용하기 */
+import {useState}from 'react';
 
 /*
   리액트에서 <div> 만드는법 :
@@ -9,26 +11,44 @@ import './App.css';
 */
 
 function App() {
-  let post = ['자바 독학', '리액트 독학', '자바 스크랩트 독학'];
+  // let post = ['자바 독학', '리액트 독학', '자바 스크립트 독학'];
+  let [post, setpost] = useState([
+    {title : '자바 독학', data : '12월 17일 발행'},
+    {title : '리액트 독학', data : '12월 17일 발행'},
+    {title : '자바 스크립트 독학', data : '12월 17일 발행'}
+  ]);
+
   return (
     <div className="App">
       <div className="blog">
         <h2>Blog</h2>
       </div>
 
-      <div >
+      <div>
         {/* 블로그 글 제목들 */}
-        <h4 className="post">{post[0]}</h4>
-        <h4 className="post">{post[1]}</h4>
+
+        <div className='post'>
+          <h4>{post[0].title}</h4>
+          <p>{post[0].data}</p>
+        </div>
+
+        <div className='post'> 
+          <h4>{post[1].title}</h4>
+          <p>{post[1].data}</p>
+        </div>
+
         {/* 스타일을 넣는 다른 방법 */}
-        <h4 style=
-        {
-          {
-            paddingLeft : '20px',
-            textAlign : 'left',
-            borderBottom : '1px solid grey'
-          }
-        } >{post[2]}</h4>
+        <div style={
+            {
+              paddingLeft : '20px',
+              textAlign : 'left',
+              borderBottom : '1px solid grey'
+            }
+          }>
+          <h4>{post[2].title}</h4>
+          <p>{post[2].data}</p>
+        </div>
+
       </div>
 
     </div>
