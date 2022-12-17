@@ -40,7 +40,6 @@ function App() {
         <h4 style={ attr }>ReactBlog</h4>
       </div>
   
-
       <List topics={topics} onChangeMode={ (id) => {
         setMode('READ');
         setId(id);
@@ -54,7 +53,7 @@ function App() {
 
     </div>
   );
-}
+} // App();
 
 function List(props) {
   let [좋아요, _좋아요] = useState(0);
