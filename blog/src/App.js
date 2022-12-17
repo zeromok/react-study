@@ -12,10 +12,10 @@ import {useState}from 'react';
 
 function App() {
   // let post = ['자바 독학', '리액트 독학', '자바 스크립트 독학'];
-  let [post, setpost] = useState([
-    {title : '자바 독학', data : '12월 17일 발행'},
-    {title : '리액트 독학', data : '12월 17일 발행'},
-    {title : '자바 스크립트 독학', data : '12월 17일 발행'}
+  let [post, setPost] = useState([
+    {id : 1, title : '자바 독학', data : '12월 17일 발행', like : 0},
+    {id : 2, title : '리액트 독학', data : '12월 17일 발행', like : 0},
+    {id : 3, title : '자바 스크립트 독학', data : '12월 17일 발행', like : 0}
   ]);
 
   return (
@@ -27,31 +27,45 @@ function App() {
       <div>
         {/* 블로그 글 제목들 */}
 
-        <div className='post'>
-          <h4>{post[0].title}</h4>
-          <p>{post[0].data}</p>
-        </div>
-
-        <div className='post'> 
-          <h4>{post[1].title}</h4>
-          <p>{post[1].data}</p>
-        </div>
-
-        {/* 스타일을 넣는 다른 방법 */}
-        <div style={
-            {
-              paddingLeft : '20px',
-              textAlign : 'left',
-              borderBottom : '1px solid grey'
-            }
-          }>
-          <h4>{post[2].title}</h4>
-          <p>{post[2].data}</p>
-        </div>
+        <Post post={post}></Post>
 
       </div>
 
     </div>
+  );
+}
+
+function Post(props) {
+  let post = [];
+  let [like, setLike] = useState([0, 0, 0, 0])
+
+  for(let element of props.post) {
+    let id = element.id;
+    post.push(
+      <div key={element.id} className='post'>
+          <h4>
+            <a href={"/read/" + element.id} onClick={ (event) => {
+            event.preventDefault();
+            }}>
+              {element.title}
+            </a>
+          </h4>
+          <p>{element.data}</p>
+          <a key={element.id} onClick={ (event) => {
+            event.preventDefault();
+            let copy = [...like]
+            copy[id]++;
+            setLike(copy);
+          }}>
+            ❤️ : { like[id] }
+          </a>
+      </div>
+    );
+  }
+  
+  return (<>
+    {post}
+  </>
   );
 }
 
