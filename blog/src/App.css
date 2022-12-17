@@ -13,6 +13,11 @@
   text-align: left;
   border-bottom: 1px solid grey;
 }
+.modal {
+  text-align: left;
+  background-color: gray;
+  height: 400px;
+}
 
 .App-logo {
   height: 40vmin;

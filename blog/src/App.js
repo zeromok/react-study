@@ -13,23 +13,44 @@ import {useState}from 'react';
 function App() {
   // let post = ['자바 독학', '리액트 독학', '자바 스크립트 독학'];
   let [post, setPost] = useState([
-    {id : 1, title : '자바 독학', data : '12월 17일 발행', like : 0},
-    {id : 2, title : '리액트 독학', data : '12월 17일 발행', like : 0},
-    {id : 3, title : '자바 스크립트 독학', data : '12월 17일 발행', like : 0}
+    {id : 1, title : '자바 독학', data : '12월 17일 발행', body : '자바는...'},
+    {id : 2, title : '리액트 독학', data : '12월 17일 발행', body : '리액트는...'},
+    {id : 3, title : '자바 스크립트 독학', data : '12월 17일 발행', body : '자바 스크립트는...'}
   ]);
+  let [mode, setMode] = useState('Welcome, My Blog');
+  let [id, setId] = useState(null);
+  let content = null;
+
+  if(mode === 'Welcome, My Blog') {
+    content = <Header  title={'Welcome, My Blog'}></Header>
+  }else if(mode === 'READ') {
+    let title, body, data = null;
+    for(let i=0; i<post.length; i++){
+      if(post[i].id === id){
+        title = post[i].title;
+        data = post[i].data;
+        body = post[i].body;
+      }
+    }
+    content = <Modal title={title} data={data} body={body} ></Modal>
+  }
 
   return (
     <div className="App">
+      
       <div className="blog">
-        <h2>Blog</h2>
+        <h2>New React Study Blog</h2>
       </div>
 
       <div>
         {/* 블로그 글 제목들 */}
-
-        <Post post={post}></Post>
-
+        <Post post={post} onChangeMode={ (id) => {
+          setMode('READ');
+          setId(id);
+        }} ></Post>
       </div>
+
+      {content}
 
     </div>
   );
@@ -44,14 +65,15 @@ function Post(props) {
     post.push(
       <div key={element.id} className='post'>
           <h4>
-            <a href={"/read/" + element.id} onClick={ (event) => {
+            <a id={element.id} href={"/read/" + element.id} onClick={ (event) => {
             event.preventDefault();
+            props.onChangeMode(Number(event.target.id));
             }}>
               {element.title}
             </a>
           </h4>
           <p>{element.data}</p>
-          <a key={element.id} onClick={ (event) => {
+          <a onClick={ (event) => {
             event.preventDefault();
             let copy = [...like]
             copy[id]++;
@@ -67,6 +89,27 @@ function Post(props) {
     {post}
   </>
   );
+}
+
+function Header(props) {
+  return(<>
+    <div>
+      <h1>{props.title}</h1>
+    </div>
+  </>);
+}
+
+function Modal(props) {
+  return (<>
+    <div>
+      <h1>{props.title}</h1>
+    </div>
+    <div className='modal'>
+      <p>제목 : {props.title}</p>
+      <p>발행 일시 : {props.data}</p>
+      <p>상세 내용 : {props.body}</p>
+    </div>
+  </>);
 }
 
 export default App;
