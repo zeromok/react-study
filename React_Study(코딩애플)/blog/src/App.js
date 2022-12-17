@@ -44,7 +44,7 @@ function App() {
       <List topics={topics} onChangeMode={ (id) => {
         setMode('READ');
         setId(id);
-      }}/>
+      }} />
 
       {/* {변수명 or 함수(리턴값) or logo(임포트 해 온 이미지)} : 데이터 바인딩 */}
       {/* <h4>{ post }</h4> */}
@@ -57,6 +57,7 @@ function App() {
 }
 
 function List(props) {
+  let [좋아요, _좋아요] = useState(0);
   const list = [];
   for(const element of props.topics) {
     let t = element;
