@@ -12,4 +12,10 @@ React_Study(생활코딩)
 
 React_Study(코딩애플)
 ------------
-[***2022 코딩애플 리액트 강의***](https://www.youtube.com/watch?v=00yJy7W0DQE&list=PLfLgtT94nNq0qTRunX9OEmUzQv4lI4pnP) 을 보며 공부한 내용 입니다. 
+[***2022 코딩애플 리액트 강의***](https://www.youtube.com/watch?v=00yJy7W0DQE&list=PLfLgtT94nNq0qTRunX9OEmUzQv4lI4pnP) 을 보며 공부한 내용 입니다.
+
+--------------------------------------------
+
+| DATA     | CONTENT |
+| :---     | :---    |
+|2022.12.20| start   |
