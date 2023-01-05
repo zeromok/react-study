@@ -8,6 +8,17 @@ const User = ({userData}) => {
         </tr>
     )
 }
+/*
+ * props를 받아 처리 할 수 있다.
+    const User = (props) => {
+        return (
+            <tr>
+                <td>{props.userData.name}</td>
+                <td>{props.userData.email}</td>
+            </tr>
+        )
+    } 
+ */
 
 const UserList = () => {
     const users = [
@@ -38,7 +49,7 @@ const UserList = () => {
                 </tr>
             </thead>
             <tbody>
-                {users.map( (user) => { return <User userData={user} />} )}
+                {users.map( (userData) => { return <User userData={userData} />} )}
             </tbody>
         </table>
     )
