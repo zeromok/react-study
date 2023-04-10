@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "fs": "^0.0.1-security",
+    "libaio": "^1.0.3",
+    "mysql2": "^3.2.0",
+    "net": "^1.0.2",
     "next": "13.3.0",
     "node": "^18.15.0",
-    "oracledb": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "serverless-mysql": "^1.5.5",
     "yarn": "^1.22.19"
   }
 }
