@@ -19,7 +19,7 @@ export default function Home() {
               <li><Link href="/sub/1">/pages/sub/[id].js</Link></li>
               <li><Link href="/sub/2">/pages/sub/[id].js</Link></li>
 
-              <li><Link href='../dbconfig'>DB TEST</Link></li>
+              <li><Link href='/api/dbconfig'>DB TEST</Link></li>
           </ul>
 
           <br/>
