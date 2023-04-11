@@ -1,39 +1,31 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import {Inter} from 'next/font/google'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] })
-import db from '../dbconfig.js';
-
 
 
 
 export default function Home() {
-    function test() {
-        fetch('http://localhost:3000/api/hello')
-            .then(res => res.json)
-            .then(data => console.log(data));
-    }
 
   return (
     <>
       <div>
         <h1>/pages/index.js</h1>
           <ul>
-              <li><a href="/sub/index,js">/pages/sub/index.js</a></li>
-              <li><a href="/sub/about.js">/pages/sub/about.js</a></li>
+              <li><Link href="/sub">/pages/sub/index.js</Link></li>
+              <li><Link href="/sub/about">/pages/sub/about.js</Link></li>
+
               {/* 쿼리스트링 */}
-              <li><a href="/sub/1">/pages/sub/[id].js</a></li>
-              <li><a href="/sub/2">/pages/sub/[id].js</a></li>
+              <li><Link href="/sub/1">/pages/sub/[id].js</Link></li>
+              <li><Link href="/sub/2">/pages/sub/[id].js</Link></li>
+
+              <li><Link href='../dbconfig'>DB TEST</Link></li>
           </ul>
 
           <br/>
           <br/>
 
-          <button onClick={db}>
-
-          </button>
+          <button>눌러주세요.</button>
       </div>
     </>
   )

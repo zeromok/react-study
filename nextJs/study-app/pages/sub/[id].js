@@ -1,5 +1,6 @@
 
 import {useRouter} from 'next/router';
+import Link from "next/link";
 
 export default function About() {
     const router = useRouter();
@@ -8,7 +9,7 @@ export default function About() {
         <div>
             <h1>pages/sub/[id].js</h1>
             <p>query : {query}</p>
-            <a href="/">/pages/index.js</a>
+            <Link href="/">/pages/index.js</Link>
         </div>
     </>
 }
