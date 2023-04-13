@@ -10,7 +10,7 @@ export default () => {
                 </Link>
             </li>
             <li>
-                <Link href="/conponents/about">
+                <Link href="/components/about">
                     About
                 </Link>
             </li>

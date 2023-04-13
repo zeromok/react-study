@@ -1,6 +1,6 @@
 import {Inter} from 'next/font/google'
 import Link from "next/link";
-import Menu from "../pages/conponents/menu";
+import Menu from "@/pages/components/menu";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,12 +46,12 @@ export default function Home() {
       <div>
         <h1>/pages/index.js</h1>
           <ul>
-              <li><Link href="/conponents">/pages/sub/index.js</Link></li>
-              <li><Link href="/conponents/about">/pages/sub/about.js</Link></li>
+              <li><Link href="/components">/pages/sub/index.js</Link></li>
+              <li><Link href="/components/about">/pages/sub/about.js</Link></li>
 
               {/* 쿼리스트링 */}
-              <li><Link href="/conponents/1">/pages/sub/[id].js</Link></li>
-              <li><Link href="/conponents/2">/pages/sub/[id].js</Link></li>
+              <li><Link href="/components/1">/pages/sub/[id].js</Link></li>
+              <li><Link href="/components/2">/pages/sub/[id].js</Link></li>
 
               <li><Link href='/api/dbconfig'>DB TEST</Link></li>
           </ul>
