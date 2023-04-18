@@ -1,6 +1,9 @@
 import {Inter} from 'next/font/google'
 import Link from "next/link";
-import Menu from "@/pages/components/menu";
+import Menu from "../pages/components/menu";
+import {FaStar} from "react-icons/fa";
+import React, {useState} from 'react';
+import StarRating from "../pages/components/StarRating"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,6 +44,7 @@ export default function Home() {
             ]
         }
     ];
+    
   return (
     <>
       <div>
@@ -61,10 +65,11 @@ export default function Home() {
             <Menu data={data} title={'조리법'}/>
           <br/>
           <br/>
-
-
-
-          <button>눌러주세요.</button>
+          <StarRating/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
       </div>
     </>
   )

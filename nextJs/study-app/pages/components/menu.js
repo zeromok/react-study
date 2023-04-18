@@ -10,11 +10,11 @@ function Recipe(props) {
                 ))}
             </ul>
             <h2>조리절차</h2>
-            <p>
+            <div>
                 {props.steps.map((item, idx) => (
-                    <p key = {idx}>{item}</p>
+                    <div key = {idx}>{item}</div>
                 ))}
-            </p>
+            </div>
             <br/>
             <br/>
         </section>
@@ -26,7 +26,7 @@ export default function Menu(props) {
         <div>
             <h1>{props.title}</h1>
             {props.data.map((item, idx) => <Recipe key={idx} name = {item.name} ingredients = {item.ingredients} steps = {item.steps}/>)}
-            <p></p>
+            {/* <p></p> */}
         </div>
     </>;
 };

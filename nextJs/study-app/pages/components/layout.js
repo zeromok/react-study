@@ -10,9 +10,3 @@ export default function Layout({ children }) {
         </>
     );
 }
-
-
-let test = [
-    {params: {id: '0'}},
-    {params: {id: '1'}}
-];
