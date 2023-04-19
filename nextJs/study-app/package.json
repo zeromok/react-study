@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/node": "^18.15.11",
+    "core-js": "^3.30.1",
     "dotenv": "^16.0.3",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -22,14 +23,12 @@
     "next": "13.3.0",
     "node": "^18.15.0",
     "node-oracledb": "^1.0.2",
-    "oracledb": "^5.5.0",
     "react": "18.2.0",
     "react-async": "^10.0.1",
     "react-dom": "18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
-    "serverless-mysql": "^1.5.5",
-    "yarn": "^1.22.19"
+    "serverless-mysql": "^1.5.5"
   },
   "devDependencies": {
     "@types/react": "18.0.37",
