@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import StarRating from './components/StarRating';
 import colorDataJson from './utill/color-data.json';
 import ColorList from './components/ColorList';
+import StarGrade from './components/StarGrade';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -42,7 +43,7 @@ export default function Home() {
             steps: ['생선을 그릴에 익힌다.', '또띠야 3장 위에 생선을 얹는다.', '또띠야에 얹은 생선 위에 상추, 토마토, 치즈를 얹는다.'],
         },
     ];
-    const [colors] = useState(colorDataJson);
+    const [colors, setColors] = useState(colorDataJson.colors);
 
     return (
         <>
@@ -62,7 +63,7 @@ export default function Home() {
                     <li>
                         <Link href="/components/2">/pages/sub/[id].js</Link>
                     </li>
-                    W
+
                     <li>
                         <Link href="/api/dbconfig">DB TEST</Link>
                     </li>
@@ -74,13 +75,18 @@ export default function Home() {
                 <br />
                 <br />
 
-                <StarRating style={{ backgroundColor: 'green', color: 'blue', display: 'inline-block' }} />
-                {/* StarRating 컴포넌트로 props 전달 */}
-
-                <br />
-                <br />
-
-                {/* <ColorList colorsDataJson={colors} /> */}
+                <StarGrade />
+                <ColorList
+                    colors={colors}
+                    onRemoveColor={(id) => {
+                        const newColors = colors.filter((color) => color.id !== id);
+                        setColors(newColors);
+                    }}
+                    onSelectColor={(id, rating) => {
+                        const newColors = colors.map((color) => (color.id === id ? { ...color, rating } : color));
+                        setColors(newColors);
+                    }}
+                />
 
                 <br />
                 <br />
