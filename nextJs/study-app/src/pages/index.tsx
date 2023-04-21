@@ -1,12 +1,11 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import Menu from '../components/menu';
-import { FaStar } from 'react-icons/fa';
-import React, { useState } from 'react';
-import StarRating from '../components/StarRating';
-import colorDataJson from '../utill/color-data.json';
+import { useState } from 'react';
 import ColorList from '../components/ColorList';
 import StarGrade from '../components/StarGrade';
+import Menu from '../components/menu';
+import colorDataJson from '../utill/color-data.json';
+import UseRef from '../components/useRef';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -75,7 +74,12 @@ export default function Home() {
                 <br />
                 <br />
 
+                <h3>--간단한 별점 컴포넌트</h3>
                 <StarGrade />
+                <br />
+                <br />
+                <br />
+                <h3>--컴포넌트 간 상호작용</h3>
                 <ColorList
                     colors={colors}
                     onRemoveColor={(id) => {
@@ -87,7 +91,13 @@ export default function Home() {
                         setColors(newColors);
                     }}
                 />
+                <br />
+                <br />
+                <h3>폼만들기(useRef)</h3>
+                <UseRef />
 
+                <br />
+                <br />
                 <br />
                 <br />
             </div>
