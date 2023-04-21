@@ -1,5 +1,5 @@
 import React, { DOMElement, useRef, useState } from 'react';
-import { useInput } from '../utill/customHook';
+import { useInput } from '../utill/CustomHook';
 
 /* 제어되지 않는 컴포넌트 -  */
 // export default function AddColorFrom() {
