@@ -1,12 +1,12 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import Menu from './components/menu';
+import Menu from '../components/menu';
 import { FaStar } from 'react-icons/fa';
 import React, { useState } from 'react';
-import StarRating from './components/StarRating';
-import colorDataJson from './utill/color-data.json';
-import ColorList from './components/ColorList';
-import StarGrade from './components/StarGrade';
+import StarRating from '../components/StarRating';
+import colorDataJson from '../utill/color-data.json';
+import ColorList from '../components/ColorList';
+import StarGrade from '../components/StarGrade';
 
 const inter = Inter({ subsets: ['latin'] });
 
