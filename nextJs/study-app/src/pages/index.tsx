@@ -1,11 +1,12 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ColorList from '../components/ColorList';
 import StarGrade from '../components/StarGrade';
 import Menu from '../components/menu';
 import colorDataJson from '../utill/color-data.json';
 import UseRef from '../hoooks/useRef';
+import { ColorContext } from '../pages/_app';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -43,6 +44,7 @@ export default function Home() {
         },
     ];
     const [colors, setColors] = useState(colorDataJson.colors);
+    const colorData = useContext(ColorContext);
 
     return (
         <>
@@ -50,21 +52,21 @@ export default function Home() {
                 <h1>/pages/index.js</h1>
                 <ul>
                     <li>
-                        <Link href="/components">/pages/sub/index.js</Link>
+                        <Link href="./index2">/pages/sub/index2.js</Link>
                     </li>
                     <li>
-                        <Link href="/components/about">/pages/sub/about.js</Link>
+                        <Link href="./about">/pages/sub/about.js</Link>
                     </li>
                     {/* 쿼리스트링 */}
                     <li>
-                        <Link href="/components/1">/pages/sub/[id].js</Link>
+                        <Link href="./1">/pages/sub/[id].js</Link>
                     </li>
                     <li>
-                        <Link href="/components/2">/pages/sub/[id].js</Link>
+                        <Link href="./2">/pages/sub/[id].js</Link>
                     </li>
 
                     <li>
-                        <Link href="/api/dbconfig">DB TEST</Link>
+                        <Link href="./api/dbconfig">DB TEST</Link>
                     </li>
                 </ul>
 
@@ -98,6 +100,7 @@ export default function Home() {
 
                 <br />
                 <br />
+                {colorData}
                 <br />
                 <br />
             </div>
