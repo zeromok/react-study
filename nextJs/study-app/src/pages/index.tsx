@@ -5,7 +5,7 @@ import ColorList from '../components/ColorList';
 import StarGrade from '../components/StarGrade';
 import Menu from '../components/menu';
 import colorDataJson from '../utill/color-data.json';
-import UseRef from '../components/UseRef';
+import UseRef from '../hoooks/useRef';
 
 const inter = Inter({ subsets: ['latin'] });
 
