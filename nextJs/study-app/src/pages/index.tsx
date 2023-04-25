@@ -100,7 +100,7 @@ export default function Home() {
 
                 <br />
                 <br />
-                {colorData.colors.map((color) => (
+                {colorData.colors.map((color: { id: string; title: string; color: string; rating: number }) => (
                     <p key={color.id}>{color.title}</p>
                 ))}
                 <br />
