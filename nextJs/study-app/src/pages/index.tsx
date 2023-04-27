@@ -7,6 +7,7 @@ import Menu from '../components/menu';
 import colorDataJson from '../utill/color-data.json';
 import UseRef from '../hoooks/useRef';
 import { ColorContext } from '../pages/_app';
+import CheckBox from '../components/CheckBok';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -97,14 +98,16 @@ export default function Home() {
                 <br />
                 <h3>폼만들기(useRef)</h3>
                 <UseRef />
-
                 <br />
                 <br />
+                <h3>Context</h3>
                 {colorData.colors.map((color: { id: string; title: string; color: string; rating: number }) => (
                     <p key={color.id}>{color.title}</p>
                 ))}
                 <br />
                 <br />
+                <h3>useEffect() 사용</h3>
+                <CheckBox />
             </div>
         </>
     );
