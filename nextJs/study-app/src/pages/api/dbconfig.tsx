@@ -1,15 +1,15 @@
-const mysql = require('mysql');
-// const mysql = require('mysql2'); for MAC
+import * as mysql from 'mysql';
+// const mysql = require('mysql2'); // for MAC
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    // host: '127.0.0.1', for MAC
+    // host: '127.0.0.1', // for MAC
     user: 'root',
     password: 'qkrqudahr1!',
-    database: 'example'
+    database: 'example',
 });
 
-function queryPromise(queryString) {
+function queryPromise(queryString: string) {
     return new Promise((resolve, reject) => {
         connection.query(queryString, (error, results) => {
             if (error) {
@@ -21,7 +21,7 @@ function queryPromise(queryString) {
 }
 
 export default async function handler(req, res) {
-    let queryString = "SELECT 1 + 1";
+    let queryString = 'SELECT 1 + 1';
 
     try {
         const rows = await queryPromise(queryString);

@@ -1,13 +1,14 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { useState, useContext } from 'react';
+import { useContext, useState } from 'react';
+import CheckBox from '../components/CheckBok';
 import ColorList from '../components/ColorList';
+import Dependencies from '../components/Dependencies';
 import StarGrade from '../components/StarGrade';
 import Menu from '../components/menu';
-import colorDataJson from '../utill/color-data.json';
 import UseRef from '../hoooks/useRef';
 import { ColorContext } from '../pages/_app';
-import CheckBox from '../components/CheckBok';
+import colorDataJson from '../utill/color-data.json';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -108,6 +109,10 @@ export default function Home() {
                 <br />
                 <h3>useEffect() 사용</h3>
                 <CheckBox />
+                <br />
+                <br />
+                <h3 id="test">의존 관계 배열</h3>
+                <Dependencies />
             </div>
         </>
     );
