@@ -9,7 +9,7 @@ import Menu from '../components/menu';
 import UseRef from '../hoooks/useRef';
 import { ColorContext } from '../pages/_app';
 import colorDataJson from '../utill/color-data.json';
-import Result from '../api/dummy';
+import Dummy from '../api/dummy';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -116,7 +116,7 @@ export default function Home() {
                 <Dependencies />
                 <br />
                 <br />
-                <Result />
+                <Dummy />
             </div>
         </>
     );

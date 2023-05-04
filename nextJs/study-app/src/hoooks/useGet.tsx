@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Result from '../api/dummy';
+import { useEffect, useState } from 'react';
 
 const instance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/',

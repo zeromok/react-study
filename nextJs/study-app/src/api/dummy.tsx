@@ -23,7 +23,7 @@ interface UserData {
         bs: string;
     };
 }
-export default function Result() {
+export default function Dummy() {
     const { data, error, pending: loading } = useGet('users');
 
     if (loading) {
