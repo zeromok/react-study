@@ -9,6 +9,7 @@ import Menu from '../components/menu';
 import UseRef from '../hoooks/useRef';
 import { ColorContext } from '../pages/_app';
 import colorDataJson from '../utill/color-data.json';
+import Result from '../api/dummy';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -113,6 +114,9 @@ export default function Home() {
                 <br />
                 <h3 id="test">의존 관계 배열</h3>
                 <Dependencies />
+                <br />
+                <br />
+                <Result />
             </div>
         </>
     );

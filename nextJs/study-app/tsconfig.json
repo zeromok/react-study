@@ -14,6 +14,6 @@
         "isolatedModules": true,
         "jsx": "preserve"
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/layout.js"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/layout.js", "src/pages/datagrid.js"],
     "exclude": ["node_modules"]
 }
